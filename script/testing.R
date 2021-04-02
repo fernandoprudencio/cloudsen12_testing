@@ -1,4 +1,5 @@
-setwd("C:/Users/ryali93/Desktop/cloudsen12/script")
+setwd("script/")
+rm(list = ls())
 library(googledrive)
 library(lubridate)
 library(tidyverse)
@@ -12,12 +13,13 @@ library(rgee)
 library(zip)
 library(sf)
 
-source("https://gist.githubusercontent.com/csaybar/daa1a877f3d1703b61846603e986b14c/raw/3fa6634a3348140ad6b7a1cb72106c13219bf294/demo.R")
-source("https://gist.githubusercontent.com/csaybar/daa1a877f3d1703b61846603e986b14c/raw/8862f01b7564926d88f37a15d2d02c12dd373daf/demo.R")
+source("https://gist.githubusercontent.com/csaybar/daa1a877f3d1703b61846603e986b14c/raw/bfbce70720c1d4ee384b0b4d20094ff9bd7d5b7d/demo.R")
 
 ee_Initialize()
 
 drive_auth("s1078735@stud.sbg.ac.at")
+# drive_auth("datasetfprudencio@gmail.com")
+
 
 ##################### CHICOS #####################
 
@@ -35,13 +37,19 @@ drive_auth("s1078735@stud.sbg.ac.at")
 ##################### CHICOS #####################
 
 # Funciones auxiliares para descargar
-download_viz(point = "point_0085")
+pt <- "point_0056"
+download_viz(point = pt)
 # download_thumbnails(point = "point_1382")
 # download_labels(point = "point_1382")
 
 # Funciones auxiliares para Cirrus and shadow
-id <- "20190623T182921_20190623T183717_T11TPJ"
-map_results <- s2_comparison(point = "point_0085", id, max = c(4000, 3000))
+pt_list <- list.files(
+  sprintf("/home/fernando/Documentos/cloudsen12_testing/%1s/viz", pt),
+  pattern = ".svg", full.names = T
+)
+
+id <- basename(pt_list[1]) %>% str_sub(1, -5)
+map_results <- s2_comparison(point = pt, id, max = c(4000, 3000))
 map_results$rgb
 map_results$cirrus
 
