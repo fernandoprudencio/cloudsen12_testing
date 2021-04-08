@@ -38,7 +38,7 @@ drive_auth("s1078735@stud.sbg.ac.at")
 ##################### CHICOS #####################
 
 # Funciones auxiliares para descargar
-pt <- "point_0071"
+pt <- "point_0086"
 download_viz(point = pt)
 # download_thumbnails(point = "point_1382")
 # download_labels(point = "point_1382")
@@ -54,7 +54,7 @@ map_results <- s2_comparison(point = pt, id, max = c(4000, 3000))
 map_results$rgb
 map_results$cirrus
 
-coordx <- " lon: -78.58555 | lat: -8.75437 | zoom: 16 "
+coordx <- " lon: -109.39244 | lat: 43.89582 | zoom: 16 "
 display_app(coordx, id, cc = 5, range = 8)
 date_delete <- c(
   seq(
@@ -68,5 +68,4 @@ date_delete <- c(
 display_ts(id, dir_name = "/home/fernando/Descargas/", file = "ee-chart.csv", date_delete =  NULL)
 
 file.remove("/home/fernando/Descargas/ee-chart.csv")
-
 
