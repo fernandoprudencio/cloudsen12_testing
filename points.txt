@@ -1,9 +1,9 @@
 *point 0071
 *point 0080
 *poitn 0083
-poitn 0086
-poitn 0092
-poitn 0098
+*poitn 0086
+*poitn 0092
+*poitn 0098
 poitn 0101
 poitn 0104
 poitn 0110

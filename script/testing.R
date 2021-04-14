@@ -12,8 +12,7 @@ library(rgee)
 library(zip)
 library(sf)
 
-source("https://gist.githubusercontent.com/csaybar/daa1a877f3d1703b61846603e986b14c/raw/bfbce70720c1d4ee384b0b4d20094ff9bd7d5b7d/demo.R")
-
+source("script/demo.R")
 source("script/functions.R")
 
 ee_Initialize()
@@ -38,7 +37,7 @@ drive_auth("s1078735@stud.sbg.ac.at")
 ##################### CHICOS #####################
 
 # Funciones auxiliares para descargar
-pt <- "point_0086"
+pt <- "point_0101"
 download_viz(point = pt)
 # download_thumbnails(point = "point_1382")
 # download_labels(point = "point_1382")
@@ -49,12 +48,12 @@ pt_list <- list.files(
   pattern = ".svg", full.names = T
 )
 
-id <- basename(pt_list[3]) %>% str_sub(1, -5)
+id <- basename(pt_list[5]) %>% str_sub(1, -5)
 map_results <- s2_comparison(point = pt, id, max = c(4000, 3000))
 map_results$rgb
 map_results$cirrus
 
-coordx <- " lon: -109.39244 | lat: 43.89582 | zoom: 16 "
+coordx <- " lon: -69.55830 | lat: -34.10646 | zoom: 17 "
 display_app(coordx, id, cc = 5, range = 8)
 date_delete <- c(
   seq(
