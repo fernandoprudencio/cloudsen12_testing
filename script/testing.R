@@ -49,12 +49,13 @@ pt_list <- list.files(
 )
 
 id <- basename(pt_list[5]) %>% str_sub(1, -5)
-map_results <- s2_comparison(point = pt, id, max = c(4000, 3000))
+map_results <- s2_comparison(point = pt, id, max = c(4000, 2000))
 map_results$rgb
 map_results$cirrus
 
-coordx <- " lon: -69.55830 | lat: -34.10646 | zoom: 17 "
-display_app(coordx, id, cc = 5, range = 8)
+coordx <- " lon: -70.42044 | lat: -27.73097 | zoom: 16 "
+display_app(coordx, id, cc = 5) 
+# display_app(coordx, id, cc = 5, range = 8)
 date_delete <- c(
   seq(
     as.Date("2019-02-01", "%Y-%m-%d"),
