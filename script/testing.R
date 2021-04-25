@@ -37,7 +37,7 @@ drive_auth("s1078735@stud.sbg.ac.at")
 ##################### CHICOS #####################
 
 # Funciones auxiliares para descargar
-pt <- "point_0101"
+pt <- "point_0116"
 download_viz(point = pt)
 # download_thumbnails(point = "point_1382")
 # download_labels(point = "point_1382")
@@ -53,7 +53,7 @@ map_results <- s2_comparison(point = pt, id, max = c(4000, 2000))
 map_results$rgb
 map_results$cirrus
 
-coordx <- " lon: -70.42044 | lat: -27.73097 | zoom: 16 "
+coordx <- " lon: 59.27663 | lat: 26.05102 | zoom: 16 "
 display_app(coordx, id, cc = 5) 
 # display_app(coordx, id, cc = 5, range = 8)
 date_delete <- c(

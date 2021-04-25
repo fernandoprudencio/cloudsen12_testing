@@ -4,11 +4,12 @@
 *poitn 0086
 *poitn 0092
 *poitn 0098
-poitn 0101
-poitn 0104
-poitn 0110
-poitn 0113
-poitn 0116
+*poitn 0101
+*poitn 0104
+*poitn 0107
+*poitn 0110
+*poitn 0113
+*poitn 0116
 poitn 0119
 poitn 0122
 poitn 0125
